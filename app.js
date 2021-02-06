@@ -3,8 +3,12 @@ const app = express();
 const port = 3000;
 
 app.get("/", (req, res) => {
-
-	res.send('Hello World!');
+	let promise = fetch("https://dog.ceo/api/breeds/image/random").then(link => 
+	res.send(`<h1> Yes, yes he is. </h1> 
+	<p>Here's a picture of a doggo</p>
+	<img src=${link} alt="A random doggo"/>
+	`);
+	)
 });
 
 app.get("/test", (req, res) => {

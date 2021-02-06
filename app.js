@@ -7,6 +7,12 @@ app.get("/", (req, res) => {
 	res.send('Hello World!');
 });
 
+app.get("/test", (req, res) => {
+
+	res.send('This is the test page');
+});
+
+
 app.get('/demo', (req, res) => {
 	res.set('X-full-stack', '4life');
 	res.status(418);

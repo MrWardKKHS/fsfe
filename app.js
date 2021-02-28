@@ -1,6 +1,12 @@
 const express = require('express');
+const admin = require('firebase-admin')
 const app = express();
 const port = 3000;
+
+admin.initializeApp({
+	credential: admin.credential.applicationDefault()//,
+	//databaseURL: 'https://<DATABASE_NAME>.firebaseio.com'
+  });
 
 app.get("/", (req, res) => {
 	res.sendFile(__dirname + "/index.html");
